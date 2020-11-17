@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kelionių agentūra</title>
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+        <!-- Styles -->
+        <link href="../app.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="app">
+            <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-uppercase text-center" href="../pagrindinis.htm">
+                        <div class="row">
+                            Kelionių agentūra
+                        </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
+                        </ul>
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                            <a id="navbarDropdown" class="nav-link" href="prisijungti.htm">
+                                Prisijungti 
+                            </a>
+                            <a id="navbarDropdown" class="nav-link" href="registruotis.htm">
+                                Registruotis 
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <main class="pb-5">
+                <div class="container" style = "position: relative; text-align: center; ">
+			<div class="text-uppercase text-muted " style = "display: inline-block; position: absolute; left: 0;" ><a href = "ataskaita.htm" > << Grįžti </a> </div>
+                        <div style = "display: inline-block; text-align: center; ">
+                            <h5 class="text-uppercase text-muted text-center">Kėlionės redagavimas</h5>
+                        </div>
+                 </div>
+                    <div class="row mt-4">
+                        <div class="col-md-4 mx-auto">
+                            <form method="POST" action="">
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input id="country" type="text" class="form-control" placeholder="Įveskite šalį" name="country" required autofocus>
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong></strong>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input id="email" type="text" class="form-control" placeholder="Įveskite miestą" name="city" required autofocus>
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong></strong>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input id="price" type="text" class="form-control" placeholder="Įveskite kainą" name="price" required autofocus>
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong></strong>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input id="password-confirm" type="password" class="form-control" placeholder="Įveskite nakvynių skaičių" name="days" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input placeholder="Išvykimo data" class="textbox-n form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input placeholder="Atvykimo data" class="textbox-n form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                          <select id="maitinimas" class = "form-control" name="maitinimas">
+					        <option value="" disabled selected>Maitinimas</option>
+    						<option value="viskas">Viskas įskaičiuota</option>
+    						<option value="pusryciai">Pusryčiai</option>
+    						<option value="vakariene">Vakarienė</option>
+    						<option value="pietus">Pietūs</option>
+ 					 </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                          <select id="patogumai" class = "form-control" name="patogumai">
+					        <option value="" disabled selected>Patogumai</option>
+    						<option value="W-fi">Wi-fi</option>
+    						<option value="Baseinas">Baseinas</option>
+    						<option value="Sporto treniruokliai">Sporto treniruokliai</option>
+    						<option value="Gultai">Gultai</option>
+ 					 </select>
+                                    </div>
+                                </div>
+
+				<div> <table id = "myTable" style="width:100%; border: 1px solid black; margin-bottom: 5%;">
+  					<tr style = "border: 1px solid black;">
+    					<th>Patogumai</th>
+  					</tr>
+				</table>
+				</div>
+
+				<div style="margin-bottom: 5%;" > <button onclick="myFunction()">Trinti</button> </div>
+
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-12 mx-auto">
+                                        <button type="submit" class="btn btn-dark text-uppercase btn-block btn-sm">
+                                            Redaguoti
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+
+	<script>
+		document.getElementById('patogumai').addEventListener('change',function(){
+    		var x = document.getElementById("patogumai");
+    		var strUser = x.options[x.selectedIndex].text;
+		x.remove(x.selectedIndex);
+
+		var tbodyRef = document.getElementById('myTable');
+
+		// Insert a row at the end of table
+		var newRow = tbodyRef.insertRow();
+
+		// Insert a cell at the end of the row
+		var newCell = newRow.insertCell();
+
+		// Append a text node to the cell
+		var newText = document.createTextNode(strUser);
+		newCell.appendChild(newText);
+		x.selectedIndex = 0;
+            });
+
+	
+		function myFunction() { 
+			var table = document.getElementById('myTable');
+			var length = table.rows.length;
+			if( length > 1)
+			{
+				var x = document.getElementById("patogumai");
+				var lastRow = table.rows[ length - 1 ];
+				var cell = lastRow.cells[0];
+		                // alert(cell.innerHTML);
+				var opt = document.createElement('option');
+				opt.value = cell.innerHTML;
+    				opt.innerHTML = cell.innerHTML;
+    				x.appendChild(opt);
+				table.deleteRow(length - 1);
+			}
+		 }
+	</script>
+    </body>
+</html>
+
